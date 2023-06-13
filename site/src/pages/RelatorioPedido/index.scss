@@ -1,0 +1,15 @@
+$font-ExtraLight: 'Inter-ExtraLight';
+$font-Light: 'Inter-Light';
+$font-Regular: 'Inter-Regular';
+$font-Bold: 'Inter-Bold';
+
+$principal-color: #6115dd;
+$black: #1f1f17;
+$white: #f1f1f1;
+
+.main-RP {
+    display: flex;
+    justify-content: center;
+    font-family: $font-Regular;
+    color: $black;    
+}

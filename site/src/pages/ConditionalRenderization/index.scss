@@ -1,0 +1,52 @@
+$font-ExtraLight: 'Inter-ExtraLight';
+$font-Light: 'Inter-Light';
+$font-Regular: 'Inter-Regular';
+$font-Bold: 'Inter-Bold';
+
+$principal-color: #6115dd;
+$black: #1f1f17;
+$white: #f1f1f1;
+
+.Main-RC {
+    margin-top: 2em;
+    font-family: $font-Regular;
+    color: $black;
+
+    a:link, a:visited {
+        color: $black;
+        text-decoration: none;
+    }
+    .p-rc {
+        margin: 0 0 0 1em;
+        cursor: pointer;
+    }
+
+    .p-rc:hover {
+        text-decoration: underline;
+    }
+
+    .h1-rc {
+        display: flex;
+        justify-content: center;
+    }
+
+    .div-rc {
+        display: flex;
+        flex-direction: row;
+        margin: 0 0 0 3em;
+    }
+
+    .div-rc p {
+        margin: 1em;
+        cursor: pointer;
+    }
+
+    .h1-renderization {
+        font-family: $font-Regular;
+        font-size: 1em;
+        color: $principal-color;
+        text-align: center;
+        width: 9%;
+        margin-left: 7.5em;
+    }
+}

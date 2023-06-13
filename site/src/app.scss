@@ -1,0 +1,33 @@
+$font-ExtraLight: 'Inter-ExtraLight';
+$font-Light: 'Inter-Light';
+$font-Regular: 'Inter-Regular';
+$font-Bold: 'Inter-Bold';
+
+$principal-color: #6115dd;
+$black: #1f1f17;
+$white: #f1f1f1;
+
+.main-app {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-Regular;
+    
+    a:link, a:visited {
+        color: $black;
+        text-decoration: none;
+    }
+
+    .h1-app {
+        display: flex;
+        justify-content: center;
+        margin-top: 1em;
+    }
+
+    .link {
+        margin: 1em;
+    }
+    .link:hover {
+        text-decoration: underline;
+    }
+
+}
