@@ -1,0 +1,119 @@
+$font-ExtraLight: 'Inter-ExtraLight';
+$font-Light: 'Inter-Light';
+$font-Regular: 'Inter-Regular';
+$font-Bold: 'Inter-Bold';
+
+$principal-color: #6115dd;
+$black: #1f1f17;
+$white: #f1f1f1;
+$white2: #dddddd;
+
+.main-RP {
+    margin-top: 2em;
+    font-family: $font-Regular;
+    color: $black;
+
+    a:link, a:visited {
+        color: $black;
+        text-decoration: none;
+    }
+
+    textarea:focus, input:focus, select:focus {
+        box-shadow: 0 0 0 0;
+        border: none;
+        outline: 0;
+    } 
+
+    .p-rp {
+        margin: 0 0 0 1em;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    .p-rp:hover {
+        text-decoration: underline;
+    }
+
+    .h1-rp {
+        display: flex;
+        justify-content: center;
+    }
+
+    .section2 {
+        display: flex;
+        flex-direction: column;
+        margin: 3em 0 0 3em;
+        background: $white;
+        width: 20%;
+        border-radius: 0.6em;        
+
+        .divs-rp {
+            display: flex;
+            flex-direction: row;
+            margin: 2em 0 1em 2em;
+            
+            .inp-div1 {
+                font-family: $font-Regular;
+                color: $black;
+                width: 40%;
+                margin-left: 4.7em;
+                border: 1px solid $white2;
+                border-radius: .2em;
+                font-size: .9em;
+            }
+            .inp-div2 {
+                font-family: $font-Regular;
+                color: $black;
+                width: 40%;
+                margin-left: 2.3em;
+                border: 1px solid $white2;
+                border-radius: .2em;
+                font-size: .9em;
+            }
+            .inp-div3 {
+                font-family: $font-Regular;
+                color: $black;
+                width: 40%;
+                margin-left: 5.1em;
+                border: 1px solid $white2;
+                border-radius: .2em;
+                font-size: .9em;
+            }
+            .inp-div4 {
+                font-family: $font-Regular;
+                color: $black;
+                width: 40%;
+                margin-left: 5.5em;
+                border: 1px solid $white2;
+                border-radius: .2em;
+                font-size: .9em;
+            }
+            .inp-div5 {
+                font-family: $font-Regular;
+                color: $black;
+                width: 40%;
+                margin-left: 2em;
+                border: 1px solid $white2;
+                border-radius: .2em;
+                font-size: .9em;
+            }
+        }
+
+        .button-rp {
+            font-family: $font-Regular;
+            background-color: $principal-color;
+            color: $white;
+            border: none;
+            border-radius: 4px;
+            padding: .4em 0 .4em 0;
+            width: 37%;
+            cursor: pointer;
+            margin: 1em 0 2em 11.6em;
+        }
+
+        .button-rp:active {
+            transform: scale(1.03);
+        }
+    }
+
+}

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from './App';
 import CR from './pages/ConditionalRenderization/index';
-import Relatorio from './pages/RelatorioPedido/index';
+import Relatorio from './pages/RelatorioPedidos/index';
 
 export default function Index() {
 
