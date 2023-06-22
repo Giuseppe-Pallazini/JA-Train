@@ -39,80 +39,97 @@ $white2: #dddddd;
         justify-content: center;
     }
 
-    .section2 {
+    .section-agrupamento {
         display: flex;
-        flex-direction: column;
-        margin: 3em 0 0 3em;
-        background: $white;
-        width: 20%;
-        border-radius: 0.6em;        
+        flex-direction: row;
 
-        .divs-rp {
+        .section2 {
             display: flex;
-            flex-direction: row;
-            margin: 2em 0 1em 2em;
-            
-            .inp-div1 {
-                font-family: $font-Regular;
-                color: $black;
-                width: 40%;
-                margin-left: 4.7em;
-                border: 1px solid $white2;
-                border-radius: .2em;
-                font-size: .9em;
+            flex-direction: column;
+            margin: 3em 0 0 3em;
+            background: $white;
+            width: 20%;
+            border-radius: 0.6em;        
+    
+            .divs-rp {
+                display: flex;
+                flex-direction: row;
+                margin: 2em 0 1em 2em;
+                
+                .inp-div1 {
+                    font-family: $font-Regular;
+                    color: $black;
+                    width: 40%;
+                    margin-left: 4.7em;
+                    border: 1px solid $white2;
+                    border-radius: .2em;
+                    font-size: .9em;
+                }
+                .inp-div2 {
+                    font-family: $font-Regular;
+                    color: $black;
+                    width: 40%;
+                    margin-left: 2.3em;
+                    border: 1px solid $white2;
+                    border-radius: .2em;
+                    font-size: .9em;
+                }
+                .inp-div3 {
+                    font-family: $font-Regular;
+                    color: $black;
+                    width: 40%;
+                    margin-left: 5.1em;
+                    border: 1px solid $white2;
+                    border-radius: .2em;
+                    font-size: .9em;
+                }
+                .inp-div4 {
+                    font-family: $font-Regular;
+                    color: $black;
+                    width: 40%;
+                    margin-left: 5.5em;
+                    border: 1px solid $white2;
+                    border-radius: .2em;
+                    font-size: .9em;
+                }
+                .inp-div5 {
+                    font-family: $font-Regular;
+                    color: $black;
+                    width: 40%;
+                    margin-left: 2em;
+                    border: 1px solid $white2;
+                    border-radius: .2em;
+                    font-size: .9em;
+                }
             }
-            .inp-div2 {
-                font-family: $font-Regular;
-                color: $black;
-                width: 40%;
-                margin-left: 2.3em;
-                border: 1px solid $white2;
-                border-radius: .2em;
-                font-size: .9em;
+
+            .divs-rp-2 {
+                display: flex;
+                justify-content: flex-start;
+                margin: 0 0 0 1em;
+                font-size: 1EM;
             }
-            .inp-div3 {
+    
+            .button-rp {
                 font-family: $font-Regular;
-                color: $black;
-                width: 40%;
-                margin-left: 5.1em;
-                border: 1px solid $white2;
-                border-radius: .2em;
-                font-size: .9em;
+                background-color: $principal-color;
+                color: $white;
+                border: none;
+                border-radius: 4px;
+                padding: .4em 0 .4em 0;
+                width: 37%;
+                cursor: pointer;
+                margin: 1em 0 2em 11.6em;
             }
-            .inp-div4 {
-                font-family: $font-Regular;
-                color: $black;
-                width: 40%;
-                margin-left: 5.5em;
-                border: 1px solid $white2;
-                border-radius: .2em;
-                font-size: .9em;
-            }
-            .inp-div5 {
-                font-family: $font-Regular;
-                color: $black;
-                width: 40%;
-                margin-left: 2em;
-                border: 1px solid $white2;
-                border-radius: .2em;
-                font-size: .9em;
+    
+            .button-rp:active {
+                transform: scale(1.03);
             }
         }
 
-        .button-rp {
-            font-family: $font-Regular;
-            background-color: $principal-color;
-            color: $white;
-            border: none;
-            border-radius: 4px;
-            padding: .4em 0 .4em 0;
-            width: 37%;
-            cursor: pointer;
-            margin: 1em 0 2em 11.6em;
-        }
-
-        .button-rp:active {
-            transform: scale(1.03);
+        .section2 h1 {
+            text-align: center;
+            margin-top: .5em;
         }
     }
 
