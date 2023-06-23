@@ -2,6 +2,7 @@ import './index.scss'
 import '../../assets/common.scss'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 export default function Index() {
     const [nmrPe, setNmrPe] = useState('');
@@ -18,8 +19,12 @@ export default function Index() {
 
     const [confirmButton, setConfirmButton] = useState(false);
 
+    const [showComponent, setShowComponent] = useState(false);
+
     function button() {
         setConfirmButton(true)
+
+        setShowComponent(!showComponent);
 
         setResultNmrPe(nmrPe)
         setResultFornecedor(fornecedor)
@@ -66,31 +71,40 @@ export default function Index() {
                 </section>
 
                 {confirmButton === true &&
-                    <section className='section2'>
-                        <h1> Resultado </h1>
-                        <div className='divs-rp-2'>
-                            <p> P.E. N°: {resultNmrPe}</p>
-                        </div>
-                        <div className='divs-rp-2'>
-                            <p> FORNECEDOR: {resultFornecedor} </p>
-                        </div>
-                        <div className='divs-rp-2'>
-                            <p> N° NF: {resultNmrNf}</p>
-                        </div>
-                        <div className='divs-rp-2'>
-                            <p> VALOR: {resultValor}</p>
-                        </div>
-                        <div className='divs-rp-2'>
-                            <p> VENCIMENTO: {resultVencimento}</p>
-                        </div>
-                        <div className='divs-rp-2'>
-                            <p> IMPLANTAÇÃO: {dataAtual}</p>
-                        </div>
-                        <div className='divs-rp-2'>
-                            <p> STATUS:IMPLANTADO, AGUARDANDO APROVAÇÃO. </p>
-                        </div>
-                    </section>
-                    }
+                    <CSSTransition
+                        in={showComponent}
+                        timeout={300}
+                        classNames="fade"
+                        unmountOnExit
+                    >
+                        <section className='section2'>
+                            <h1> Resultado </h1>
+                            <div className='section2-divResult'>
+                                <div className='divs-rp-2'>
+                                    <p> P.E. N°: {resultNmrPe}</p>
+                                </div>
+                                <div className='divs-rp-2'>
+                                    <p> FORNECEDOR: {resultFornecedor} </p>
+                                </div>
+                                <div className='divs-rp-2'>
+                                    <p> N° NF: {resultNmrNf}</p>
+                                </div>
+                                <div className='divs-rp-2'>
+                                    <p> VALOR: {resultValor}</p>
+                                </div>
+                                <div className='divs-rp-2'>
+                                    <p> VENCIMENTO: {resultVencimento}</p>
+                                </div>
+                                <div className='divs-rp-2'>
+                                    <p> IMPLANTAÇÃO: {dataAtual}</p>
+                                </div>
+                                <div className='divs-rp-2'>
+                                    <p> STATUS:IMPLANTADO, AGUARDANDO APROVAÇÃO. </p>
+                                </div>
+                            </div>
+                        </section>
+                    </CSSTransition>
+                }
 
             </section>
         </main>

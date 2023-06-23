@@ -13,16 +13,19 @@ $white2: #dddddd;
     font-family: $font-Regular;
     color: $black;
 
-    a:link, a:visited {
+    a:link,
+    a:visited {
         color: $black;
         text-decoration: none;
     }
 
-    textarea:focus, input:focus, select:focus {
+    textarea:focus,
+    input:focus,
+    select:focus {
         box-shadow: 0 0 0 0;
         border: none;
         outline: 0;
-    } 
+    }
 
     .p-rp {
         margin: 0 0 0 1em;
@@ -43,19 +46,39 @@ $white2: #dddddd;
         display: flex;
         flex-direction: row;
 
+        .fade-enter {
+            opacity: 0;
+          }
+          
+          .fade-enter-active {
+            opacity: 1;
+            transition: opacity 300ms;
+          }
+          
+          .fade-exit {
+            opacity: 1;
+          }
+          
+          .fade-exit-active {
+            opacity: 0;
+            transition: opacity 300ms;
+          }
+          
+
         .section2 {
             display: flex;
             flex-direction: column;
+            align-items: center;
             margin: 3em 0 0 3em;
             background: $white;
             width: 20%;
-            border-radius: 0.6em;        
-    
+            border-radius: 0.6em;
+
             .divs-rp {
                 display: flex;
                 flex-direction: row;
                 margin: 2em 0 1em 2em;
-                
+
                 .inp-div1 {
                     font-family: $font-Regular;
                     color: $black;
@@ -65,6 +88,7 @@ $white2: #dddddd;
                     border-radius: .2em;
                     font-size: .9em;
                 }
+
                 .inp-div2 {
                     font-family: $font-Regular;
                     color: $black;
@@ -74,6 +98,7 @@ $white2: #dddddd;
                     border-radius: .2em;
                     font-size: .9em;
                 }
+
                 .inp-div3 {
                     font-family: $font-Regular;
                     color: $black;
@@ -83,6 +108,7 @@ $white2: #dddddd;
                     border-radius: .2em;
                     font-size: .9em;
                 }
+
                 .inp-div4 {
                     font-family: $font-Regular;
                     color: $black;
@@ -92,6 +118,7 @@ $white2: #dddddd;
                     border-radius: .2em;
                     font-size: .9em;
                 }
+
                 .inp-div5 {
                     font-family: $font-Regular;
                     color: $black;
@@ -103,13 +130,19 @@ $white2: #dddddd;
                 }
             }
 
-            .divs-rp-2 {
-                display: flex;
-                justify-content: flex-start;
-                margin: 0 0 0 1em;
-                font-size: 1EM;
+            .section2-divResult {
+                width: 90%;
+                border-radius: .7em;
+                background: $white;
+
+                .divs-rp-2 {
+                    display: flex;
+                    justify-content: flex-start;
+                    margin: 0 0 0 1em;
+                    font-size: 1EM;
+                }
             }
-    
+
             .button-rp {
                 font-family: $font-Regular;
                 background-color: $principal-color;
@@ -119,9 +152,9 @@ $white2: #dddddd;
                 padding: .4em 0 .4em 0;
                 width: 37%;
                 cursor: pointer;
-                margin: 1em 0 2em 11.6em;
+                margin: 1em 0 2em 9.7em;
             }
-    
+
             .button-rp:active {
                 transform: scale(1.03);
             }
