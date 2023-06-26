@@ -24,7 +24,9 @@ export default function Index() {
     function button() {
         setConfirmButton(true)
 
-        setShowComponent(!showComponent);
+        setTimeout(() => {
+            setShowComponent(!showComponent);
+        }, 100);
 
         setResultNmrPe(nmrPe)
         setResultFornecedor(fornecedor)
