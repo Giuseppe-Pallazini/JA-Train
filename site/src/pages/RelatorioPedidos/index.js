@@ -5,21 +5,33 @@ import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 export default function Index() {
-    const [nmrPe, setNmrPe] = useState('');
-    const [fornecedor, setFornecedor] = useState('');
-    const [nmrNf, setNmrNf] = useState('');
-    const [valor, setValor] = useState('');
-    const [vencimento, setVencimento] = useState('');
+    const [nmrPe, setNmrPe]                         = useState('');
+    const [fornecedor, setFornecedor]               = useState('');
+    const [nmrNf, setNmrNf]                         = useState('');
+    const [valor, setValor]                         = useState('');
+    const [vencimento, setVencimento]               = useState('');
 
-    const [resultNmrPe, setResultNmrPe] = useState('');
-    const [resultFornecedor, setResultFornecedor] = useState('');
-    const [resultNmrNf, setResultNmrNf] = useState('');
-    const [resultValor, setResultValor] = useState('');
-    const [resultVencimento, setResultVencimento] = useState('');
+    const [resultNmrPe, setResultNmrPe]             = useState('');
+    const [resultFornecedor, setResultFornecedor]   = useState('');
+    const [resultNmrNf, setResultNmrNf]             = useState('');
+    const [resultValor, setResultValor]             = useState('');
+    const [resultVencimento, setResultVencimento]   = useState('');
 
-    const [confirmButton, setConfirmButton] = useState(false);
+    const [confirmButton, setConfirmButton]         = useState(false);
+    const [showComponent, setShowComponent]         = useState(false);
 
-    const [showComponent, setShowComponent] = useState(false);
+    function Transform(nmrPe) {
+
+        let result = '';
+        for (let i = 0; i < nmrPe.length; i++) {
+    
+            if(i === 1) {
+                result = result + nmrPe[i] + '.';
+            }
+            else result = result + nmrPe[i];
+        }
+        return setResultNmrPe(result)
+    }
 
     function button() {
         setConfirmButton(true)
@@ -28,12 +40,14 @@ export default function Index() {
             setShowComponent(!showComponent);
         }, 100);
 
-        setResultNmrPe(nmrPe)
+        //Transform()
+        //setResultNmrPe(nmrPe)
         setResultFornecedor(fornecedor)
         setResultNmrNf(nmrNf)
         setResultValor(valor)
         setResultVencimento(vencimento)
     }
+    
 
     var data = new Date();
     var dia = String(data.getDate()).padStart(2, '0');
