@@ -131,6 +131,9 @@ $white2: #dddddd;
             }
 
             .section2-divResult {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 width: 90%;
                 border-radius: .7em;
                 background: $white;
