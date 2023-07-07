@@ -5,26 +5,26 @@ import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 export default function Index() {
-    const [nmrPe, setNmrPe] = useState(0);
-    const [fornecedor, setFornecedor] = useState('');
-    const [nmrNf, setNmrNf] = useState('');
-    const [valor, setValor] = useState('');
-    const [vencimento, setVencimento] = useState('');
+    const [nmrPe, setNmrPe]                             = useState(0);
+    const [fornecedor, setFornecedor]                   = useState('');
+    const [nmrNf, setNmrNf]                             = useState('');
+    const [valor, setValor]                             = useState('');
+    const [vencimento, setVencimento]                   = useState('');
 
-    const [resultNmrPe, setResultNmrPe] = useState('');
-    const [resultFornecedor, setResultFornecedor] = useState('');
-    const [resultNmrNf, setResultNmrNf] = useState('');
-    const [resultValor, setResultValor] = useState('');
-    const [resultVencimento, setResultVencimento] = useState('');
+    const [resultNmrPe, setResultNmrPe]                 = useState('');
+    const [resultFornecedor, setResultFornecedor]       = useState('');
+    const [resultNmrNf, setResultNmrNf]                 = useState('');
+    const [resultValor, setResultValor]                 = useState('');
+    const [resultVencimento, setResultVencimento]       = useState('');
 
-    const [confirmButton, setConfirmButton] = useState(false);
-    const [showComponent, setShowComponent] = useState(false);
+    const [confirmButton, setConfirmButton]             = useState(false);
+    const [showComponent, setShowComponent]             = useState(false);
     const [ShowComponentErrors, setShowComponentErrors] = useState(false);
-    const [confirmErrors, setConfirmErrors] = useState(false)
-
-
+    const [confirmErrors, setConfirmErrors]             = useState(false);
 
     function button() {
+
+        // Transformar 59001 --> 59.001
         let result = '';
         for (let i = 0; i < nmrPe.length; i++) {
 
@@ -33,27 +33,29 @@ export default function Index() {
             }
             else result = result + nmrPe[i];
         }
+
+        // Validação de campos vazios
         if (nmrPe === '' || fornecedor === '' || nmrNf === '' || valor === '' || vencimento === '') {
-            setConfirmErrors(true)
+            setConfirmErrors(true);
             setTimeout(() => {
-                setShowComponentErrors(true)
+                setShowComponentErrors(true);
             }, 100);
         } else {
-            setConfirmButton(true)
+            setConfirmButton(true);
 
             setTimeout(() => {
                 setShowComponent(true);
-                setShowComponentErrors(false)
+                setShowComponentErrors(false);
             }, 100);
-            setResultNmrPe(result)
-            setResultFornecedor(fornecedor)
-            setResultNmrNf(nmrNf)
-            setResultValor(valor)
-            setResultVencimento(vencimento)
+            setResultNmrPe(result);
+            setResultFornecedor(fornecedor);
+            setResultNmrNf(nmrNf);
+            setResultValor(valor);
+            setResultVencimento(vencimento);
         }
     }
 
-
+    // Pegar data atual
     var data = new Date();
     var dia = String(data.getDate()).padStart(2, '0');
     var mes = String(data.getMonth() + 1).padStart(2, '0');
@@ -70,7 +72,7 @@ export default function Index() {
                     {confirmErrors === true &&
                         <CSSTransition in={ShowComponentErrors} timeout={300} classNames="fade" unmountOnExit >
                             <div>
-                                <p> *Insira todos os campos </p>
+                                <p className='ValidacaoErros'> * Insira todos os campos </p>
                             </div>
                         </CSSTransition>}
                     <div className='divs-rp'>
