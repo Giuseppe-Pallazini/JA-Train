@@ -8,6 +8,7 @@ $black: #1f1f17;
 $white: #f1f1f1;
 $white2: #dddddd;
 
+
 .main-RP {
     margin-top: 2em;
     font-family: $font-Regular;
@@ -37,9 +38,26 @@ $white2: #dddddd;
         text-decoration: underline;
     }
 
+    @keyframes ladoLooping {
+        0%{
+            position: 0;
+        }
+        33%{
+            transform: rotateX(30px);
+        }
+        66%{
+            transform: rotateX(-30px);
+        }
+        100%{
+            position: 0;
+        }
+    }
+
     .h1-rp {
         display: flex;
         justify-content: center;
+        width: 99%;
+        animation: ladoLooping 3s infinite ease-in-out;
     }
 
     .section-agrupamento {
@@ -113,6 +131,7 @@ $white2: #dddddd;
                     border: 1px solid $white2;
                     border-radius: .2em;
                     font-size: .9em;
+                    animation: subida .2s ease-in-out .2s;
                 }
 
                 .inp-div2 {
@@ -123,6 +142,7 @@ $white2: #dddddd;
                     border: 1px solid $white2;
                     border-radius: .2em;
                     font-size: .9em;
+                    animation: subida .2s ease-in-out .4s;
                 }
 
                 .inp-div3 {
@@ -133,6 +153,7 @@ $white2: #dddddd;
                     border: 1px solid $white2;
                     border-radius: .2em;
                     font-size: .9em;
+                    animation: subida .2s ease-in-out .6s;
                 }
 
                 .inp-div4 {
@@ -143,6 +164,7 @@ $white2: #dddddd;
                     border: 1px solid $white2;
                     border-radius: .2em;
                     font-size: .9em;
+                    animation: subida .2s ease-in-out .8s;
                 }
 
                 .inp-div5 {
@@ -153,7 +175,18 @@ $white2: #dddddd;
                     border: 1px solid $white2;
                     border-radius: .2em;
                     font-size: .9em;
+                    animation: subida .2s ease-in-out 1s;
                 }
+            }
+
+            .divs-rp-buttons {
+                display: flex;
+                flex-direction: column;
+                justify-content:space-around;
+                font-size: .9em;
+                //border: 1px solid black;
+                height: 7em;
+                margin-bottom: 1em;
             }
 
             .section2-divResult {
@@ -179,9 +212,10 @@ $white2: #dddddd;
                 border: none;
                 border-radius: 4px;
                 padding: .4em 0 .4em 0;
-                width: 37%;
+                //width: 37%;
                 cursor: pointer;
-                margin: 1em 0 2em 9.7em;
+                //margin: 1em 0 2em 9.7em;
+                animation: tremida .1s ease-in-out 1.2s;
             }
 
             .button-rp:active {

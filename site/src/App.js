@@ -6,8 +6,8 @@ export default function Index() {
     <main className='main-app'>
       <h1 className='h1-app'> Treinos </h1>
 
-        <Link className='link' to={'/ConditionalRenderization'}> - Renderização Condicional </Link>
-        <Link className='link' to={'/RelatorioPedidos'}> - Relatorio dos Pedidos </Link>
+        <Link className='link1' to={'/ConditionalRenderization'}> - Renderização Condicional </Link>
+        <Link className='link2' to={'/RelatorioPedidos'}> - Relatorio dos Pedidos </Link>
 
     </main>
   );

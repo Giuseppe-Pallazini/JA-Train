@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 export default function Index() {
-    const [nmrPe, setNmrPe]                             = useState(0);
+    const [nmrPe, setNmrPe]                             = useState('');
     const [fornecedor, setFornecedor]                   = useState('');
     const [nmrNf, setNmrNf]                             = useState('');
     const [valor, setValor]                             = useState('');
@@ -16,11 +16,15 @@ export default function Index() {
     const [resultNmrNf, setResultNmrNf]                 = useState('');
     const [resultValor, setResultValor]                 = useState('');
     const [resultVencimento, setResultVencimento]       = useState('');
+    const [resultCheck, setResultCheck]                 = useState('');
 
     const [confirmButton, setConfirmButton]             = useState(false);
     const [showComponent, setShowComponent]             = useState(false);
     const [ShowComponentErrors, setShowComponentErrors] = useState(false);
     const [confirmErrors, setConfirmErrors]             = useState(false);
+
+    const [verifCheck, setVerifCheck]                   = useState('option1');
+
 
     function button() {
 
@@ -40,7 +44,9 @@ export default function Index() {
             setTimeout(() => {
                 setShowComponentErrors(true);
             }, 100);
-        } else {
+        }
+        // Enviar para a renderização condicional 
+        else {
             setConfirmButton(true);
 
             setTimeout(() => {
@@ -52,6 +58,7 @@ export default function Index() {
             setResultNmrNf(nmrNf);
             setResultValor(valor);
             setResultVencimento(vencimento);
+            setResultCheck(verifCheck)
         }
     }
 
@@ -77,7 +84,7 @@ export default function Index() {
                         </CSSTransition>}
                     <div className='divs-rp'>
                         <p> P.e. N°: </p>
-                        <input className='inp-div1' type='text' onChange={e => setNmrPe(e.target.value)} />
+                        <input className='inp-div1' type='text' value={nmrPe} onChange={e => setNmrPe(e.target.value)} />
                     </div>
                     <div className='divs-rp'>
                         <p> Fornecedor: </p>
@@ -95,8 +102,13 @@ export default function Index() {
                         <p> Vencimento: </p>
                         <input className='inp-div5' type='text' onChange={e => setVencimento(e.target.value)} />
                     </div>
-
-                    <button className='button-rp' onClick={button}> OK </button>
+                    <div className='divs-rp-buttons'>
+                        <div>
+                            <div> <input type='radio' name='options' value='option1' checked={verifCheck === 'option1'} onChange={e => setVerifCheck(e.target.value)} /> Aguardando aprovação </div>
+                            <div> <input type='radio' name='options' value='option2' checked={verifCheck === 'option2'} onChange={e => setVerifCheck(e.target.value)} /> Entregue ao recebimento </div>
+                        </div>
+                        <button className='button-rp' onClick={button}> OK </button>
+                    </div>
                 </section>
 
                 {confirmButton === true &&
@@ -127,9 +139,13 @@ export default function Index() {
                                 <div className='divs-rp-2'>
                                     <p> IMPLANTAÇÃO: {dataAtual}</p>
                                 </div>
-                                <div className='divs-rp-2'>
-                                    <p> STATUS:IMPLANTADO, AGUARDANDO APROVAÇÃO. </p>
-                                </div>
+                                {resultCheck === 'option1' &&
+                                    <div className='divs-rp-2'> STATUS:IMPLANTADO, AGUARDANDO APROVAÇÃO. </div>
+                                }
+
+                                {resultCheck === 'option2' &&
+                                    <div className='divs-rp-2'> STATUS:ENTREGE AO RECEBIMENTO. </div>
+                                }
                             </div>
                         </section>
                     </CSSTransition>

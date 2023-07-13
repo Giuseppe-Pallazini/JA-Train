@@ -28,25 +28,84 @@ $white: #f1f1f1;
     .h1-rc {
         display: flex;
         justify-content: center;
+        animation: tremida .1s ease-in-out;
     }
 
-    .div-rc {
+    @keyframes aparecer {
+        0%{
+            opacity: 0;
+        }
+
+        50%{
+            opacity: 50;
+        }
+
+        100%{opacity: 100;}
+    }
+
+    .rc-section1 {
         display: flex;
-        flex-direction: row;
-        margin: 0 0 0 3em;
-    }
+        flex-direction: column;
+        align-items: flex-start;
 
-    .div-rc p {
-        margin: 1em;
-        cursor: pointer;
-    }
 
-    .h1-renderization {
-        font-family: $font-Regular;
-        font-size: 1em;
-        color: $principal-color;
-        text-align: center;
-        width: 9%;
-        margin-left: 7.5em;
+        .div-rc {
+            display: flex;
+            flex-direction: row;
+            margin: 0 0 0 3em;
+    
+            // .fade-enter {
+            //     opacity: 0;
+            //   }
+              
+            //   .fade-enter-active {
+            //     opacity: 1;
+            //     transition: opacity 300ms;
+            //   }
+              
+            //   .fade-exit {
+            //     opacity: 1;
+            //   }
+              
+            //   .fade-exit-active {
+            //     opacity: 0;
+            //     transition: opacity 300ms;
+            //   }
+    
+            .div-rcSelecionada {
+                background-color: $principal-color;
+                color: $white;
+                padding: .3em;
+                animation: aparecer .6s ease-in-out;
+            }
+    
+            .div-rcNaoSelecionada {
+                background-color: white;
+                color: $principal-color;
+                padding: .3em;
+                animation: aparecer .6s ease-in-out;
+            }
+        }
+    
+        .linha-divrc {
+            margin: -.95em 0 0 4em;
+            border-bottom: 2px solid $principal-color;
+            width: 19.6%;
+        }
+    
+        .div-rc p {
+            margin: 1em;
+            cursor: pointer;
+        }
+    
+        .h1-renderization {
+            font-family: $font-Regular;
+            font-size: 1em;
+            color: $black;
+            text-align: center;
+            width: 50%;
+            margin: 2em 0 0 7.5em;
+            animation: aparecer .6s ease-in-out;
+        }
     }
 }
